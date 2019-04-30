@@ -12,12 +12,14 @@ void check(){
     for (int i = 0; i <= 100; i++){
         for (int j = 0; j <= 100; j++){
             bool flag = true;
+            int num = 0;
             for (int k = 0; k < N; k++){
                 if (H[k] == 0){
                     continue;
                 }else{
-                    if ((k == 0) || (((ans == abs(X[k] - i) + abs(Y[k] - j) + H[k])) && (ans >= 1))){
+                    if ((num == 0) || (((ans == abs(X[k] - i) + abs(Y[k] - j) + H[k])) && (ans >= 1))){
                         ans = abs(X[k] - i) + abs(Y[k] - j) + H[k];
+                        num += 1;
                     }else{
                         flag = false;
                         break;
