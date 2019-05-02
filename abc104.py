@@ -9,9 +9,18 @@ class Score():
 D, G = [int(c) for c in input().split(" ")]
 min_times = 100000000000
 
-def dfs(score_lists, masks: list, num: int, sum_score, sum_use_num):
+score_lists = []
+min_num = 0
+for i in range(D):
+    p, c = [int(c) for c in input().split(" ")]
+    score = 100 * (i + 1)
+    scores = Score(score, p, c)
+    score_lists.append(scores)
+
+def dfs(masks: list, num: int, sum_score, sum_use_num):
     """completeするかしないかで2^Dを選んでいく
     """
+    global score_lists
     if (num == D):
         # print(sum_score)
         for i in range(D - 1, -1, -1):
@@ -39,23 +48,18 @@ def dfs(score_lists, masks: list, num: int, sum_score, sum_use_num):
                     
     else:
         masks[num] = 0
-        dfs(score_lists, masks, num + 1, sum_score, sum_use_num)
+        dfs(masks, num + 1, sum_score, sum_use_num)
 
         masks[num] = 1
-        dfs(score_lists, masks, num + 1, \
+        dfs(masks, num + 1, \
             sum_score + score_lists[num].num * score_lists[num].score + score_lists[num].bonus, \
             sum_use_num + score_lists[num].num)
 
+def main():
+    masks = [0] * D
+    dfs(masks, 0, 0, 0)
 
-score_lists = []
-min_num = 0
-for i in range(D):
-    p, c = [int(c) for c in input().split(" ")]
-    score = 100 * (i + 1)
-    scores = Score(score, p, c)
-    score_lists.append(scores)
+    print(min_times)
 
-masks = [0] * D
-dfs(score_lists, masks, 0, 0, 0)
-
-print(min_times)
+if __name__ == '__main__':
+    main()
