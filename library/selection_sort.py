@@ -1,4 +1,9 @@
 """通常はsorted(list, reverse=True)を使う"""
+"""
+    挿入ソート: トランプの並び替え．ある程度整列されていれば，O(N)でいける，降順を昇順にするときO(N^2)
+    バブルソート: 常に0(N^2)
+    選択ソート: 最小値を探すを繰り返す，常にO(N^2)．不安定
+"""
 
 def selection_sort(lists: list) -> list:
     N = len(lists)
