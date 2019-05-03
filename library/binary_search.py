@@ -1,4 +1,5 @@
-"""bisectを使ってbanary_searchする"""
+"""bisectを使ってbanary_searchする
+   AOJのbinary search"""
 
 import bisect
 import math
@@ -13,8 +14,6 @@ def main():
     for i in range(q):
         x = T[i]
         idx = bisect.bisect_left(S, x)
-        # print(idx)
-        # print(S[idx])
         if ((idx < n) and (S[idx] == x)):
             num += 1
         else:
