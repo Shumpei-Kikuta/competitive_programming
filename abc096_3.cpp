@@ -53,23 +53,11 @@ int main(){
             }
         }
     }
-    // for (int i = 0; i <= H + 1; i++){
-    //     for (int j = 0; j <= W + 1; j++){
-    //         cout << matrix[i][j]<< " ";
-    //     }
-    //     cout << endl;
-    // }
     if (is_solve()){
         cout << "Yes" << endl;
     }else{
         cout << "No" << endl;
     }
-    // for (int i = 0; i <= H + 1; i++){
-    //     for (int j = 0; j <= W + 1; j++){
-    //         cout << matrix[i][j]<< " ";
-    //     }
-    //     cout << endl;
-    // }
-
+    
     return 0;
 }
