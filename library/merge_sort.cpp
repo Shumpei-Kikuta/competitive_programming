@@ -1,3 +1,5 @@
+// 分割統治法の有名問題
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
