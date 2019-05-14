@@ -20,15 +20,18 @@ class Queue():
         self.left = 0
         self.right = 0
         self.lists = [None] * LEN
-        self.front = self.lists[self.left]
-        self.size = self.right - self.left
+        self.front = self.__get_front()
+        self.size = self.__get_size()
+
+    def __get_size(self):
+        return self.right - self.left
 
     def push(self, x):
         self.lists[self.right] = x
         self.right += 1
         self.right %= LEN
         self.front = self.__get_front()
-        self.size = self.right - self.left
+        self.size = self.__get_size()
     
     def pop(self):
         self.left += 1
