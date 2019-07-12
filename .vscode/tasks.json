@@ -1,0 +1,14 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "clang",
+    "isShellCommand": true,
+    "args": [
+        "abc116_3.cpp", // プログラムファイル
+        "-g",     // デバッグ情報付加する。ないとデバッグできない。
+        "-O0",    // コンパイル速度重視
+        "-m32"    // 64bitの場合
+    ],
+    "showOutput": "always"
+}

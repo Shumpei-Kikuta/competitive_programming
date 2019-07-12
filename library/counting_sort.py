@@ -1,30 +1,30 @@
 import math
 
-def counting_sort(A, B, k, n):
+def counting_sort(N, A, k):
     C = [0] * (k + 1)
-
-    for i in range(n):
-        C[A[i]] += 1
+    B = [0] * (N + 1)
+    for element in A:
+        C[element] += 1
     for i in range(1, k + 1):
         C[i] = C[i] + C[i - 1]
-
-    for j in range(n - 1, -1, -1):
-        B[C[A[j]]] = A[j]
-        C[A[j]] -= 1
+    for i in range(N - 1, -1, -1):
+        element = A[i]
+        B[C[element] - 1] = element
+        C[element] -= 1
+        # print(B)
     return B
 
-
 def main():
-    n = int(input())
+    N = int(input())
     A = [int(c) for c in input().split()]
-    B = [None] * (n + 1)
-    k = max(A)
-    B = counting_sort(A, B, k, n)[1: ]
-    for i in range(len(B)):
+    B = counting_sort(N, A, max(A))
+    # print(B)
+    for i in range(N):
         print(B[i], end="")
-        if i != len(B) - 1:
+        if i != N-1:
             print(end=" ")
     print()
+
 
 if __name__ == '__main__':
     main()

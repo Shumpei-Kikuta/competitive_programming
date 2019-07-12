@@ -68,7 +68,7 @@ class Dubbly_linked_list():
             cursor = cursor.right
             if cursor != self.nil:
                 print(end=" ")
-        print()
+        print() 
 
 
 def main():

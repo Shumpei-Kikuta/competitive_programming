@@ -1,0 +1,7 @@
+[0, 10, 8, 5, 1, 2, 3]
+node 1: key = 10, left key = 8, right key = 5, 
+node 2: key = 8, parent key = 10, left key = 1, right key = 2, 
+node 3: key = 5, parent key = 10, left key = 3, 
+node 4: key = 1, parent key = 8, 
+node 5: key = 2, parent key = 8, 
+node 6: key = 3, parent key = 5, 

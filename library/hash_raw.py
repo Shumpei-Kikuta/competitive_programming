@@ -30,7 +30,7 @@ class HashTable():
 
     def __h2(self, intkey):
         # 2個目のhash関数， returnは0-self,__mまでのint
-        return 1 + intkey % (self.__m - 1)
+        return intkey % (self.__m - 1)
 
     def insert(self, x):
         # xを挿入する，まずkeyをint型へ計算し，値から対応するメモリに格納する．その際に衝突を考慮
