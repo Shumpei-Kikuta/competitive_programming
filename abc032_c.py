@@ -12,7 +12,7 @@ def main():
         if S[i] == 0:
             print(N)
             sys.exit()
-    
+
     left, right = 0, 0
     max_len = 0
     num = 1
