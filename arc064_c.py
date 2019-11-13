@@ -15,7 +15,6 @@ def main():
             num += A[i] + A[i - 1] - x
             A[i] = x - A[i - 1]
     print(num)
-            
 
 
 if __name__ == '__main__':
