@@ -7,7 +7,7 @@ INF = 1000000
 def main():
     H, W = map(int, input().split())
     adj_matrix = [[int(c) for c in input().split()] for i in range(10)]
-    
+
     A = [[int(c) for c in input().split()] for i in range(H)]
 
     def solve(now, S, dp):
@@ -31,7 +31,6 @@ def main():
     for i in range(10):
         dp = [[INF for c in range(1 << 10)] for i in range(10)]
         minimum_distance[i] = solve(i, 1 << i, dp)
-    print(minimum_distance)
 
     wall_num = {i: 0 for i in range(10)}
     for line_ in A:
@@ -45,7 +44,6 @@ def main():
         ans += wall_num[i] * minimum_distance[i]
     print(ans)
 
-    
 
 if __name__ == '__main__':
     main()
